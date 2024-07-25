@@ -27,3 +27,28 @@ def decode(password): # Takes a string of numbers, and returns a string of the n
         arr.append(new_char)
 
     return "".join(arr)
+
+def menu():
+    print("Menu\n-------------"
+          ,"\n1. Encode"
+          ,"\n2. Decode"
+          ,"\n3. Quit")
+
+def main():
+    new_password = ""
+    while (True):
+        menu()
+        option = int(input("\nPlease enter an option: "))
+        match option:
+            case 1:
+                password = input("Please enter the password to encode: ")
+                new_password += encode(password)
+                print("Your password has been encoded and stored!\n")
+            case 2:
+                password = decode(new_password)
+                print(f"The encoded password is {new_password}, and the original password is {password}.")
+            case 3:
+                break
+
+if __name__ == "__main__":
+    main()
