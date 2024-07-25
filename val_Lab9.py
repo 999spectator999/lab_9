@@ -1,7 +1,11 @@
 def encode(password):
     new_pass = ""
     for char in password:
-        new_pass += str(int(char) + 3)
+        num = int(char) + 3
+        if (num > 9):
+            new_pass += str(num % 10)
+        else:
+            new_pass += str(num)
     return new_pass
 
 def decode(password): # Takes a string of numbers, and returns a string of the numbers after adding 3
