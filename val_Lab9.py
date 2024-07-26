@@ -45,9 +45,10 @@ def main():
         option = int(input("\nPlease enter an option: "))
         match option:
             case 1:
+                new_password = ""
                 password = input("Please enter the password to encode: ")
                 new_password += encode(password)
-                print("Your password has been encoded and stored!\n")
+                print(f"The encoded password is {new_password}, and the original password is {password}.")
             case 2:
                 password = decode(new_password)
                 print(f"The encoded password is {new_password}, and the original password is {password}.")
